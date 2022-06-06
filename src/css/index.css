@@ -7,3 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.card_border{
+  border-radius: 0.5rem;
+  box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.4);
+}

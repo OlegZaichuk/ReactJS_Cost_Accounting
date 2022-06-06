@@ -1,23 +1,17 @@
 import React from 'react';
 import '../css/CostItem.css';
+import CostDateView from "./CostDateView";
+import Card from "./Card";
 
 const CostItems = (props) => {
-    const year = props.date.getFullYear();
-    const month = props.date.toLocaleString('en-US', {month: 'long'});
-    const day = props.date.toLocaleString('en-US', {day: '2-digit'});
     return (
-        <div className='cost-item'>
-            <div>
-                <div>{month}</div>
-                <div>{year}</div>
-                <div>{day}</div>
-            </div>
-            {/*<div>{props.date.toDateString()}</div>*/}
+        <Card className='cost-item'>
+            <CostDateView date={props.date}/>
             <div className='cost-item__description'>
                 <h2>{props.description}</h2>
                 <div className='cost-item__price'>${props.amount}</div>
             </div>
-        </div>
+        </Card>
     );
 };
 
