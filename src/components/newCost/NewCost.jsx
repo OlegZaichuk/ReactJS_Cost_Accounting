@@ -9,6 +9,8 @@ const NewCost = (props) => {
             id: Math.random().toString()
         };
         props.onAddCost(newCostDataOut);
+        console.log('newCostDataHandler')
+        console.log(newCostDataOut)
     }
 
     return (

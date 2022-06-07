@@ -8,9 +8,8 @@ const CostForm = (props) => {
 
     const addNewCost = (e) => {
         e.preventDefault();
-        const sendDate = { data: new Date(costDate), description: costName, amount: costSum};
+        const sendDate = { data: new Date(costDate.replace(/-/g, '\/')), description: costName, amount: costSum};
         props.onNewCostData(sendDate);
-
         setCostName('');
         setCostSum('');
         setCostData('');
