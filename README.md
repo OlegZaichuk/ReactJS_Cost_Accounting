@@ -2,12 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-[example web ](https://cost-accounting.khronos.ml)
+## Example web page  
 
 
-[example web with www ](https://www.cost-accounting.khronos.ml)
+[URL 1](https://cost-accounting.khronos.ml)
+
+
+[URL 2](https://www.cost-accounting.khronos.ml)
 
