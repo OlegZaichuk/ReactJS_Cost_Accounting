@@ -6,13 +6,18 @@ const CostForm = (props) => {
     const [costSum, setCostSum] = useState('')
     const [costDate, setCostData] = useState('')
 
-    const addNewCost = (e) => {
-        e.preventDefault();
-        const sendDate = { data: new Date(costDate.replace(/-/g, '\/')), description: costName, amount: costSum};
-        props.onNewCostData(sendDate);
+    const clearFormData = () => {
         setCostName('');
         setCostSum('');
         setCostData('');
+        props.onCloseForm();
+    }
+
+    const addNewCost = (e) => {
+        e.preventDefault();
+        const sendDate = { data: new Date(costDate.replace(/-/g, '/')), description: costName, amount: costSum};
+        props.onNewCostData(sendDate);
+        clearFormData();
     }
     return (
         <form onSubmit={addNewCost}>
@@ -33,13 +38,12 @@ const CostForm = (props) => {
                     <input value={costDate}
                            onChange={e => setCostData(e.target.value)}
                            type='date'
-                           min='2019-01-01'/>
+                           min='2018-01-01'/>
                 </div>
                 <div className='new-cost__actions'>
-                    <button
-                        type='submit'
-                        // onClick={addNewCost}
-                    >Add New</button>
+                    <button type='submit'>Add New</button>
+
+                    <button onClick={clearFormData}>Cancel</button>
                 </div>
             </div>
         </form>

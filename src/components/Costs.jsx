@@ -13,11 +13,16 @@ const Costs = (props) => {
     const changeYear = (newYear) =>{
         setCurrentYear(newYear)
     }
+
+    const filteredCost = props.costsList.filter(el => el.data.getFullYear().toString() === currentYear)
+    const noCostList = <h2 className='cost-list__fallback'>No expenses this year</h2>
+
+
     return (
         <Card className='costs'>
             <CostFilter year={currentYear} onChangeYear={changeYear} />
-            {props.costsList.filter(el => el.data.getFullYear() == currentYear).
-            map(costItem => <CostItems key={costItem.id} date={costItem.data} description={costItem.description} amount={costItem.amount}/>)}
+            {filteredCost.length === 0 ? noCostList :
+                filteredCost.map(costItem => <CostItems key={costItem.id} costItem = {costItem}/>)}
         </Card>
     );
 };

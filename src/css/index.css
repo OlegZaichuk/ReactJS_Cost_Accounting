@@ -11,3 +11,18 @@ body {
   border-radius: 0.5rem;
   box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.4);
 }
+
+.cost-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cost-list__fallback {
+  color: #fefae1;
+  text-align: center;
+}
+
+.text-align__center {
+  text-align: center;
+}
+
