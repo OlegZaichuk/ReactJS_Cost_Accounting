@@ -1,6 +1,6 @@
 import React from 'react';
 import './CostsFilter.css';
-
+// import '../../img/arrow.svg'
 const CostFilter = (props) => {
     const yearChangeHandler = (e) => {
         props.onChangeYear(e.target.value)
